@@ -3,6 +3,8 @@ import {Routes, Route, useParams} from "react-router-dom"
 import DeckView from "./DeckView"
 import Study from './Study';
 import {readDeck} from "../../utils/api"
+import decks from "./deck.module.css"
+
 function Deck() {
     const [deck, setDeck] = useState({})
     const [error, setError] = useState(null)
@@ -25,10 +27,10 @@ function Deck() {
     },[deck_id])
 
     return ( 
-    <div>
+    <div className={decks["deck-container"]}>
         <Routes>
             <Route path="/" element={<DeckView deck={deck} />} />
-            <Route path="/study" element={<Study />} />  
+            <Route path="/study" element={<Study deck={deck} pageName={"Study"} />} />  
         </Routes>
     </div> 
     );

@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../Breadcrumb";
-
+import deckview from "./deckview.module.css"
 function DeckView({ deck }) {
   return (
-    <div className="view-deck-container">
+    <div className={deckview["view-deck-container"]}>
       <Breadcrumb deck={deck} />
-      <div className="deck-info">
+      <div className={deckview["deck-info"]}>
         <h3>{deck.name}</h3>
         <p>{deck.description}</p>
-        <div className="deck-controls">
-          <Link to={`/decks/${deck.deck_id}/edit`}>Edit</Link>
-          <Link to={`/decks/${deck.deck_id}/study`}>Study</Link>
-          <Link to={`/decks/${deck.deck_id}/cards/new`}>Cards</Link>
+        <div className={deckview["deck-controls"]}>
+          <Link className={deckview["deck-link"]} to={`/decks/${deck.deck_id}/edit`}>Edit</Link>
+          <Link className={deckview["deck-link"]} to={`/decks/${deck.deck_id}/study`}>Study</Link>
+          <Link className={deckview["deck-link"]} to={`/decks/${deck.deck_id}/cards/new`}>Cards</Link>
           <button>Delete Deck</button>
         </div>
       </div>
@@ -21,28 +21,29 @@ function DeckView({ deck }) {
           const [side, setSide] = useState(false);
           return (
             <div
-              className="card-container"
+              className={deckview["card-container"]}
               key={card.card_id}
               id={card.card_id}
             >
-              <div className="card-row">
+              <div className={deckview["card-row"]}>
                 <h5>Card # {card.card_id}</h5>
               </div>
-              <div className="card-row">
+              <div className={deckview["card-row"]}>
                 {side ? (
                   <div>
-                    <h4>Back</h4>
-                    <div>{card.back}</div>
+                    <h4>Back:</h4>
+                    <div className={deckview["card-content"]}>{card.back}</div>
                   </div>
                 ) : (
                   <div>
-                    <h4>Front</h4>
-                    <div>{card.front}</div>
+                    <h4>Front:</h4>
+                    <div className={deckview["card-content"]}>{card.front}</div>
                   </div>
                 )}
-                <button onClick={() => setSide(!side)}>Flip</button>
+                
               </div>
-              <div className="card-row">
+              <div className={deckview["card-row"]}>
+              <button onClick={() => setSide(!side)}>Flip</button>
                 <Link
                   to={`/decks/${deck.deck_id}/cards/${card.card_id}/edit`}
                 />

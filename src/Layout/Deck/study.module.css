@@ -1,0 +1,44 @@
+.study-container {
+    padding: 10px
+}
+
+.study-name {
+    text-decoration: 1px solid underline;
+    font-size: 24px;
+}
+
+.study-card {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid black;
+    width: 80%
+}
+
+.study-card-subtitle {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.study-card-text {
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.study-card-flip {
+    padding: 5px;
+    background: none;
+    border: 1px solid black;
+    margin-left: 10px;
+    transition: 800ms;
+}
+.study-card-flip:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+@media (800px <= width){
+    .study-card {
+        width: 50%
+    }
+}

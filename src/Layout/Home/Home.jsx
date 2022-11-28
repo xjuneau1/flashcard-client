@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import {Link} from "react-router-dom"
 import DeckList from './DeckList';
 import { listDecks } from '../../utils/api';
+import home from "../Home/home.module.css"
+import Breadcrumb from '../Breadcrumb';
 function Home({decks, setDecks}) {
 
     useEffect(()=>{
@@ -17,8 +19,9 @@ function Home({decks, setDecks}) {
     },[])
 
     return ( 
-        <div>
-            <Link to="/decks/new">Create Deck</Link>
+        <div className={home["home-container"]}>
+            <Breadcrumb />
+            <Link className={home["home-link"]} to="/decks/new">Create Deck</Link>
             <DeckList decks={decks} setDecks={setDecks} />
         </div>
      );

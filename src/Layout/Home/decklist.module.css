@@ -25,6 +25,24 @@
     display: flex;
     justify-content: flex-end;
 }
-.deck-buttons > Link {
-    margin-right: 5px;
+.deck-buttons > button {
+    margin: 5px 5px 0px 0px;
+    padding: 5px;
+    border: 1px solid black;
+    background: none;
+    transition: 800ms;
+}
+.deck-buttons > button:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+.deck-link {
+    margin: 5px 5px 0px 0px;
+    padding: 5px;
+    border: 1px solid black;
+    text-decoration: none;
+    transition: 800ms;
+}
+.deck-link:hover {
+    background-color: grey;
 }
