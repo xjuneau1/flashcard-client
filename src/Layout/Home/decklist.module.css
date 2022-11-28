@@ -1,0 +1,30 @@
+.deck {
+    border: 1px solid black;
+    margin: 20px;
+    padding: 10px;
+}
+
+.deck-body {
+    display: flex;
+    flex-direction: column;
+}
+.deck-body > h3 {
+    margin: 0;
+}
+.deck-body > h6 {
+    margin: 0px 0px 5px 0px;
+}
+
+.deck-description {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.deck-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+.deck-buttons > Link {
+    margin-right: 5px;
+}
