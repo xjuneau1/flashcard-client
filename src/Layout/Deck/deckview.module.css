@@ -88,15 +88,29 @@
     box-shadow: -1px 1px 10px #2b3a55;
 }
 
-.card-row > div > h4 {
-    text-align: center;
+.card-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-row > h4 {
+    margin: 20px 0px 5px 0px;
 }
 .card-row > h5 {
     margin: 0;
 }
 
 .card-content {
-    margin: 20px;
+    margin: 0px 0px 10px 0px;
+    padding: 10px;
+    
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 40px #CE7777;
+}
+
+.card-controls {
+    padding: 10px;
 }
 
 .card-button {
