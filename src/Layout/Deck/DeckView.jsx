@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../Breadcrumb";
-import { deleteDeck } from "../../utils/api";
+import { deleteDeck, deleteCard } from "../../utils/api";
 import deckview from "./deckview.module.css"
 function DeckView({ deck, navigate }) {
 
@@ -53,10 +53,11 @@ function DeckView({ deck, navigate }) {
                 
               </div>
               <div className={deckview["card-row"]}>
-              <button onClick={() => setSide(!side)}>Flip</button>
+              <button className={deckview["card-button"]} onClick={() => setSide(!side)}>Flip</button>
                 <Link
+                className={deckview["deck-link"]}
                   to={`/decks/${deck.deck_id}/cards/${card.card_id}/edit`}
-                />
+                >Edit</Link>
                 <button
                   onClick={async () => {
                     if (

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {Routes, Route, useParams, useNavigate} from "react-router-dom"
+import {readDeck} from "../../utils/api"
 import DeckView from "./DeckView"
 import Study from './Study';
-import {readDeck} from "../../utils/api"
-import decks from "./deck.module.css"
 import EditDeck from './EditDeck';
 import AddCard from '../cards/AddCard';
+import EditCard from '../cards/EditCard';
+import decks from "./deck.module.css"
 function Deck() {
     const [deck, setDeck] = useState({})
     const [error, setError] = useState(null)
@@ -25,7 +26,7 @@ function Deck() {
         getDeckById()
 
         return () => abortController.abort()
-    },[deck_id])
+    },[deck_id, deck.cards])
 
     return ( 
     <div className={decks["deck-container"]}>
@@ -33,7 +34,8 @@ function Deck() {
             <Route path="/" element={<DeckView deck={deck} navigate={navigate} />} />
             <Route path="/study" element={<Study deck={deck} pageName={"Study"} />} />
             <Route path="/edit" element={<EditDeck deck={deck} pageName={"Edit Deck"} />} />
-            <Route path="/cards/new" element={<AddCard deck={deck} pageName={"Add Card"} />} />     
+            <Route path="/cards/new" element={<AddCard deck={deck} pageName={"Add Card"} />} />
+            <Route path="/cards/:card_id/edit" element={<EditCard deck={deck} pageName={"Edit Card"} />} />      
         </Routes>
     </div> 
     );

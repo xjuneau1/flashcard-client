@@ -64,9 +64,14 @@ export async function updateDeck(deck_id, updatedDeck, signal){
   return await fetchJson(url, options, {})
 }
 
+export async function readCard(card_id, signal){
+  const url = `${BASE_API_URL}/cards/${card_id}`
+  return await fetchJson(url, { signal }, {})
+}
+
 export async function createCard(deck_id, card, signal){
   const url = `${BASE_API_URL}/cards`
-  card.deck_id = deck_id
+  card.deck_id = Number(deck_id)
   const options = {
     method: "POST",
     headers,
@@ -75,3 +80,24 @@ export async function createCard(deck_id, card, signal){
   }
   return await fetchJson(url, options, {})
 }
+
+export async function updateCard(card_id, updatedCard, signal){
+  const url = `${BASE_API_URL}/cards/${card_id}`
+  const options = {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(updatedCard),
+    signal
+  }
+  return await fetchJson(url, options, {})
+}
+
+export async function deleteCard(card_id, signal){
+  const url = `${BASE_API_URL}/cards/${card_id}`
+  const options = {
+    method: "DELETE",
+    signal
+  }
+  return await fetchJson(url, options, )
+}
+

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { createCard } from "../../utils/api"
 import Breadcrumb from '../Breadcrumb';
 import CardForm from '../forms/CardForm';
 import addcard from "./addcard.module.css"
 function AddCard({deck, pageName}) {
     const { deck_id } = useParams()
-
+    const navigate = useNavigate()
     const initFormData = {
         front:"",
         back:""
@@ -21,6 +21,7 @@ function AddCard({deck, pageName}) {
             if(window.confirm("Create this card?\n\n You may edit this card later.")){
                 const newCard = await createCard(deck_id, formData, abortController.signal)
                 console.log(newCard)
+                setTimeout(navigate(`/decks/${deck_id}`), 3000)
             }
         } catch (err) {
             setError(err)
