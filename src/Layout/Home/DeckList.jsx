@@ -8,7 +8,7 @@ function DeckList({ decks }) {
     if (
       window.confirm("Delete this deck? You will not be able to recover it.")
     ) {
-      deleteDeck(event.target.parentNode.parentNode.id, abortController.signal);
+      deleteDeck(event.target.parentNode.parentNode.parentNode.id, abortController.signal);
       return window.location.reload(true);
     }
   };

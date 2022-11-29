@@ -1,6 +1,7 @@
 .breadcrumb-container {
     display: flex;
     margin: 20px;
+    align-self: center;
 }
 
 .breadcrumb-link {

@@ -7,7 +7,6 @@ headers.append("Content-Type", "application/json")
 async function fetchJson(url, options, onCancel) {
     try {
       const response = await fetch(url, options);
-  
       if (response.status < 200 || response.status > 399) {
         throw new Error(`${response.status} - ${response.statusText}`);
       }
@@ -41,4 +40,15 @@ export async function deleteDeck(deck_id, signal){
 export async function readDeck(deck_id, signal){
   const url = `${BASE_API_URL}/decks/${deck_id}`
   return await fetchJson(url, {signal}, {})
+}
+
+export async function createDeck(deck, signal){
+  const url = `${BASE_API_URL}/decks`
+  const options = {
+    method: "POST",
+    headers,
+    body: JSON.stringify(deck),
+    signal
+  }
+  return await fetchJson(url, options, {})
 }

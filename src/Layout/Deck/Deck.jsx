@@ -15,7 +15,6 @@ function Deck() {
             try {
                 const data = await readDeck(deck_id, abortController.signal)
                 setDeck(data)
-                setTimeout(console.log(data), 3000)
             } catch (err) {
                 setError(err)
                 console.log(error)

@@ -11,7 +11,6 @@ function Home({decks, setDecks}) {
         async function getDecks(){
             const data = await listDecks(abortController.signal)
             await setDecks(data)
-            setTimeout(console.log(data), 3000)
         }
         getDecks()
 
