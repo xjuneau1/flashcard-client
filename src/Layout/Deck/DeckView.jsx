@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../Breadcrumb";
+import { deleteDeck } from "../../utils/api";
 import deckview from "./deckview.module.css"
-function DeckView({ deck }) {
+function DeckView({ deck, navigate }) {
+
+  const handleDeleteDeck = async () => {
+    const abortController = new AbortController()
+    if(window.confirm("Delete this deck? \n\n You will not be able to recover it.")){
+      await deleteDeck(deck.deck_id, abortController.signal)
+      return navigate("/");
+    }
+  }
+
   return (
     <div className={deckview["view-deck-container"]}>
       <Breadcrumb deck={deck} />
@@ -13,7 +23,7 @@ function DeckView({ deck }) {
           <Link className={deckview["deck-link"]} to={`/decks/${deck.deck_id}/edit`}>Edit</Link>
           <Link className={deckview["deck-link"]} to={`/decks/${deck.deck_id}/study`}>Study</Link>
           <Link className={deckview["deck-link"]} to={`/decks/${deck.deck_id}/cards/new`}>Cards</Link>
-          <button>Delete Deck</button>
+          <button onClick={handleDeleteDeck}>Delete Deck</button>
         </div>
       </div>
       {Object.keys(deck).length ? (

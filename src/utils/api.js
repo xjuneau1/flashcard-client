@@ -52,3 +52,14 @@ export async function createDeck(deck, signal){
   }
   return await fetchJson(url, options, {})
 }
+
+export async function updateDeck(deck_id, updatedDeck, signal){
+  const url = `${BASE_API_URL}/decks/${deck_id}`
+  const options = {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(updatedDeck),
+    signal
+  }
+  return await fetchJson(url, options, {})
+}
