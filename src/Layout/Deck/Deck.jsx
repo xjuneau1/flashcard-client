@@ -5,7 +5,7 @@ import Study from './Study';
 import {readDeck} from "../../utils/api"
 import decks from "./deck.module.css"
 import EditDeck from './EditDeck';
-
+import AddCard from '../cards/AddCard';
 function Deck() {
     const [deck, setDeck] = useState({})
     const [error, setError] = useState(null)
@@ -32,7 +32,8 @@ function Deck() {
         <Routes>
             <Route path="/" element={<DeckView deck={deck} navigate={navigate} />} />
             <Route path="/study" element={<Study deck={deck} pageName={"Study"} />} />
-            <Route path="/edit" element={<EditDeck deck={deck} pageName={"Edit Deck"} />} />    
+            <Route path="/edit" element={<EditDeck deck={deck} pageName={"Edit Deck"} />} />
+            <Route path="/cards/new" element={<AddCard deck={deck} pageName={"Add Card"} />} />     
         </Routes>
     </div> 
     );

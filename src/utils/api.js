@@ -63,3 +63,15 @@ export async function updateDeck(deck_id, updatedDeck, signal){
   }
   return await fetchJson(url, options, {})
 }
+
+export async function createCard(deck_id, card, signal){
+  const url = `${BASE_API_URL}/cards`
+  card.deck_id = deck_id
+  const options = {
+    method: "POST",
+    headers,
+    body: JSON.stringify(card),
+    signal
+  }
+  return await fetchJson(url, options, {})
+}
