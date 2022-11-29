@@ -1,13 +1,40 @@
 .breadcrumb-container {
     display: flex;
+    align-items: center;
     margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
     align-self: center;
+    border-bottom: 2px solid #2B3A55;
+    transition: 2000ms;
 }
 
 .breadcrumb-link {
-    margin: 0px 5px 0px  5px;
-    text-decoration: 1px solid underline;
+    margin: 0px 5px 0px 5px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #2B3A55;
+    transition: 800ms;
 }
+
+@keyframes bounce {
+    50% {
+        transform: scale(.95, 1.1);
+        translate: 0% -10%;
+    }
+    
+    100% {
+        transform: scale(1, 1);
+    }
+    
+}
+
+.breadcrumb-link:hover {
+    animation: bounce 2s ease-in-out infinite;
+    color: #CE7777;
+    text-decoration: 1px solid underline #CE7777;
+}
+
 .breadcrumb-pagename{
     margin-left: 5px;
 }

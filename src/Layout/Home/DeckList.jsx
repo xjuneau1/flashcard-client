@@ -24,10 +24,11 @@ function DeckList({ decks }) {
                 id={deck.deck_id}
               >
                 <div className={decklist["deck-body"]}>
-                  <h6>No. of Cards: {deck.cards.length}</h6>
+                  <h5>No. of Cards: {deck.cards.length}</h5>
                   <h3>{deck.name}</h3>
+                  <h4>Description:</h4>
                   <div className={decklist["deck-description"]}>
-                    <h4>Description:</h4>
+                    
                     <p>{deck.description}</p>
                   </div>
                   <div className={decklist["deck-buttons"]}>
