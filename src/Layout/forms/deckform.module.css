@@ -1,0 +1,68 @@
+.deck-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+
+.deck-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.deck-form-row {
+    margin: 5px;
+    padding: 10px;
+}
+
+.deck-form-row > fieldset {
+    border: 1px solid #2b3a55;
+    border-radius: 5px;
+    box-shadow: -3px 3px 10px #2b3a55;
+}
+
+.deck-form-row > fieldset > legend {
+    padding: 5px;
+    background-color: #e8c4c4cb;
+    border: 1px solid #2b3a55;
+    border-radius: 5px;
+}
+
+.deck-form-label {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 5px;
+}
+
+.deck-form-input {
+    margin: 10px;
+    padding: 3px;
+    border: 1px solid #2b3a55;
+    background-color: #E8C4C4;
+    color: #2b3a55;
+}
+
+.deck-form-button {
+    margin: 5px 5px 0px 0px;
+    padding: 5px;
+    border: 1px solid #2b3a5500;
+    border-radius: 5px;
+    background: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #2B3A55;
+    transition: 800ms;
+}
+
+.deck-form-button:hover {
+    cursor: pointer;
+    border: 1px solid #2b3a55;
+    box-shadow: 0px 0px 10px #CE7777;
+}
+
+.deck-form-control {
+    padding: 10px;
+}

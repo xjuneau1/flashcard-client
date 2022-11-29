@@ -13,7 +13,7 @@ function DeckList({ decks }) {
     }
   };
   return (
-    <div>
+    <div className={decklist["deck-container"]}>
       {decks.length ? (
         decks
           .map((deck) => {

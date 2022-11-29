@@ -6,41 +6,73 @@
 }
 
 .deck-info {
-    margin-top: 10px;
+    margin: 20px 0px 20px 0px;
     padding: 10px;
-    border: 1px solid black
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: -3px 3px 20px #2b3a55;
+}
+
+.deck-info > h3 {
+    margin: 10px 0px 5px 0px;
+    font-size: 20px;
+    text-decoration: 1px solid underline #2B3A55;
+}
+
+.deck-info > h5 {
+    margin: 0px 0px 5px 0px;
+}
+
+.deck-info h4 {
+    text-align: center;
 }
 
 .deck-info > p {
+    margin: 10px 5px 15px 5px;
     padding: 10px;
+    border: 1px solid #CE7777;
+    box-shadow: inset 0 0 6px #CE7777;
+    border-radius: 5px;
+    background-color: #e8c4c4c0;
 }
 
 
 .deck-controls {
     display: flex;
+    justify-content: flex-end;
     margin-bottom: 10px;
 }
 .deck-controls > button {
-    margin: 0px 10px 0px 0px;
+    margin: 5px 5px 0px 0px;
     padding: 5px;
-    border: 1px solid black;
+    border: 1px solid #2b3a5500;
+    border-radius: 5px;
     background: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #2B3A55;
     transition: 800ms;
 }
 .deck-controls > button:hover {
     cursor: pointer;
-    background-color: grey;
+    border: 1px solid #2b3a55;
+    box-shadow: 0px 0px 10px #CE7777;
+    background-color: #cc4646a3;
 }
 
 .deck-link {
-    margin: 0px 10px 0px 0px;
+    margin: 5px 5px 0px 0px;
     padding: 5px;
+    border: 1px solid #2b3a5500;
+    border-radius: 5px;
     text-decoration: none;
-    border: 1px solid black;
+    font-size: 16px;
+    color: #2B3A55;
     transition: 800ms;
 }
 .deck-link:hover {
-    background-color: grey;
+    border: 1px solid #2b3a55;
+    box-shadow: 0px 0px 10px #CE7777;
 }
 
 .card-container {
@@ -48,9 +80,12 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    margin: 10px 0px 10px 0px;
+    margin: 10px 0px 20px 0px;
+    border: 3px solid #e8c4c4ba;
+    border-radius: 5px;
     width: 80%;
-    border: 1px solid black;
+    background-color: #E8C4C4;
+    box-shadow: -1px 1px 10px #2b3a55;
 }
 
 .card-row > div > h4 {
@@ -64,8 +99,47 @@
     margin: 20px;
 }
 
+.card-button {
+    margin: 5px 5px 0px 0px;
+    padding: 5px;
+    border: 1px solid #2b3a5500;
+    border-radius: 5px;
+    background: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #2B3A55;
+    transition: 800ms;
+}
+
+.card-button:hover {
+    cursor: pointer;
+    border: 1px solid #2b3a55;
+    box-shadow: 0px 0px 10px #CE7777;
+    background-color: #cc4646a3;
+}
+
+.card-button-flip {
+    margin: 5px 5px 0px 0px;
+    padding: 5px;
+    border: 1px solid #2b3a5500;
+    border-radius: 5px;
+    background: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #2B3A55;
+    transition: 800ms;
+}
+
+.card-button-flip:hover {
+    cursor: pointer;
+    border: 1px solid #2b3a55;
+    box-shadow: 0px 0px 10px #CE7777;
+}
 @media (800px <= width){
     .card-container {
-        width: 60%;
+        width: 40%;
+    }
+    .deck-info {
+        width: 60%
     }
 }
