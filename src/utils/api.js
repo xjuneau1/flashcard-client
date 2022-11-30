@@ -1,5 +1,5 @@
 
-const BASE_API_URL = import.meta.env.BASE_API_URL // || "http://localhost:5000"
+const BASE_API_URL = import.meta.env.BASE_API_URL  || "http://localhost:5000"
 
 const headers = new Headers()
 headers.append("Content-Type", "application/json")
