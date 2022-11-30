@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../Breadcrumb";
 import { deleteDeck, deleteCard } from "../../utils/api";
 import deckview from "./deckview.module.css";
 function DeckView({ deck, navigate }) {
@@ -20,7 +19,6 @@ function DeckView({ deck, navigate }) {
     <>
       {Object.keys(deck).length ? (
         <div className={deckview["view-deck-container"]}>
-          <Breadcrumb deck={deck} />
           <div className={deckview["deck-info"]}>
             <h5>No. of cards: {deck.cards.length}</h5>
             <h3>{deck.name}</h3>

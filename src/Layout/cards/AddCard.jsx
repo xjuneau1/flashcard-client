@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from "react-router-dom"
 import { createCard } from "../../utils/api"
-import Breadcrumb from '../Breadcrumb';
 import CardForm from '../forms/CardForm';
 import addcard from "./addcard.module.css"
 function AddCard({deck, pageName}) {
@@ -35,7 +34,6 @@ function AddCard({deck, pageName}) {
     }
     return ( 
         <div className={addcard["add-card-container"]}>
-            <Breadcrumb deck={deck} pageName={pageName} />
             <h3>{deck.name}: {pageName}</h3>
             <CardForm formData={formData} handleSubmit={handleAddCard} handleChange={handlePropChange} deckId={deck_id} />
         </div> 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { readCard, updateCard } from "../../utils/api";
-import Breadcrumb from "../Breadcrumb";
 import CardForm from "../forms/CardForm";
 import editcard from "./editcard.module.css";
 function EditCard({ deck, pageName }) {
@@ -49,7 +48,7 @@ function EditCard({ deck, pageName }) {
 
   return (
     <div className={editcard["edit-card-container"]}>
-      <Breadcrumb deck={deck} pageName={pageName} />
+      <h3>{deck.name}: {pageName}</h3>
       <CardForm
         formData={formData}
         handleSubmit={handleEditCard}

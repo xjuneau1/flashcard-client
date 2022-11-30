@@ -19,7 +19,6 @@ function Home({decks, setDecks}) {
 
     return ( 
         <div className={home["home-container"]}>
-            <Breadcrumb />
             <Link className={home["home-link"]} to="/decks/new">Create Deck</Link>
             <DeckList decks={decks} setDecks={setDecks} />
         </div>

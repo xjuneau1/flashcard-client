@@ -1,9 +1,10 @@
 .breadcrumb-container {
     display: flex;
     align-items: center;
-    margin: 20px;
-    padding: 10px;
+    margin: 30px 0px 20px 0px;
+    padding: 5px;
     border-radius: 5px;
+    width: fit-content;
     align-self: center;
     border-bottom: 2px solid #2B3A55;
     box-shadow: 0px 1px 1px #2b3a558c;
@@ -13,9 +14,15 @@
 .breadcrumb-link {
     margin: 0px 5px 0px 5px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 14px;
     color: #2B3A55;
     transition: 800ms;
+}
+
+.breadcrumb-pagename {
+    margin: 0px 5px 0px 5px;
+    font-size: 14px;
+    color: #2B3A55;
 }
 
 @keyframes bounce {

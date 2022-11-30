@@ -28,7 +28,6 @@ async function fetchJson(url, options, onCancel) {
 
 export async function listDecks(signal){
     const url = `${BASE_URL}/decks`
-    console.log(BASE_URL)
     return await fetchJson(url, {headers, signal}, [])
 }
 

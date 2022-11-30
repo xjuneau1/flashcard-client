@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import DeckForm from "../forms/DeckForm";
 import createdeck from "./createdeck.module.css";
 import { createDeck } from "../../utils/api";
-import Breadcrumb from "../Breadcrumb";
 
 function CreateDeck() {
   const initFormData = {
@@ -40,7 +39,6 @@ function CreateDeck() {
 
   return (
     <div className={createdeck["create-container"]}>
-      <Breadcrumb />
       <DeckForm
         handleSubmit={handleCreateDeck}
         handleChange={handlePropChange}

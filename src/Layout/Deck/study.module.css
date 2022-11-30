@@ -4,17 +4,32 @@
     align-items: center;
     padding: 10px
 }
+.study-no-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.study-no-cards > h2 {
+    text-align: center;
+}
+.study-no-cards > p {
+    margin: 10px;
+    text-align: center;
+}
 
 .study-name {
-    text-decoration: 1px solid underline;
+    text-decoration: 1px solid underline #2b3a55;
     font-size: 24px;
 }
 
 .study-card {
-    margin: 10px;
+    margin: 20px;
     padding: 20px;
-    border: 1px solid black;
-    width: 80%
+    border: 3px solid #e8c4c4ba;
+    border-radius: 10px;
+    width: 80%;
+    background-color: #E8C4C4;
+    box-shadow: -1px 1px 10px #2b3a55;
 }
 
 .study-card-subtitle {
@@ -26,18 +41,44 @@
     margin-bottom: 20px;
     padding: 20px;
     font-size: 18px;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 40px #CE7777;
 }
 
 .study-card-flip {
-    padding: 5px;
+    margin: 5px 5px 0px 0px;
+    padding: 10px;
+    border: 1px solid #2b3a5500;
+    border-radius: 5px;
     background: none;
-    border: 1px solid black;
-    margin-left: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #2B3A55;
     transition: 800ms;
 }
 .study-card-flip:hover {
     cursor: pointer;
-    background-color: grey;
+    border: 1px solid #2b3a55;
+    box-shadow: 0px 0px 10px #CE7777;
+}
+
+.study-add-link {
+    align-self: center;
+    margin: 10px 0px 0px 0px;
+    padding: 10px;
+    border: 1px solid #2b3a5500;
+    border-radius: 5px;
+    background: none;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #2B3A55;
+    transition: 800ms;
+}
+.study-add-link:hover {
+    cursor: pointer;
+    border: 1px solid #2b3a55;
+    box-shadow: 0px 0px 10px #CE7777;
 }
 
 @media (800px <= width){

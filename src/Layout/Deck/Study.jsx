@@ -25,14 +25,13 @@ function Study({ deck, pageName }) {
     if (deck.cards.length < 2) {
       return (
         <div className={study["study-container"]}>
-          <Breadcrumb deck={deck} pageName={pageName} />
           <div className={study["study-no-cards"]}>
             <h2>Not Enough Cards</h2>
             <p>
-              You need at least 2 cards to study. There are {deck.cards.length}{" "}
-              cards in this deck.
+              You need at least 2 cards to study. There is {deck.cards.length}{" "}
+              card in this deck.
             </p>
-            <Link to={`/decks/${deck.id}/cards/new`}>Add Cards</Link>
+            <Link className={study["study-add-link"]} to={`/decks/${deck.deck_id}/cards/new`}>Add Cards</Link>
           </div>
         </div>
       );
@@ -40,7 +39,6 @@ function Study({ deck, pageName }) {
 
     return (
       <div className={study["study-container"]}>
-        <Breadcrumb deck={deck} pageName={pageName} />
         <div className={study["study-name"]}>{deck.name}: Study</div>
         <div className={study["study-card"]}>
           <div className={study["study-card-subtitle"]}>

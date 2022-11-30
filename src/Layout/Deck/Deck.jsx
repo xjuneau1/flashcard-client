@@ -7,9 +7,7 @@ import EditDeck from './EditDeck';
 import AddCard from '../cards/AddCard';
 import EditCard from '../cards/EditCard';
 import decks from "./deck.module.css"
-function Deck() {
-    const [deck, setDeck] = useState({})
-    const [error, setError] = useState(null)
+function Deck({deck, setDeck, error, setError}) {
     const { deck_id } = useParams()
     const navigate = useNavigate()
     useEffect(()=>{

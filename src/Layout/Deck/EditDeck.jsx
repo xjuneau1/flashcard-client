@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { readDeck, updateDeck} from "../../utils/api";
-import Breadcrumb from "../Breadcrumb";
 import DeckForm from "../forms/DeckForm";
 import editdeck from "./editdeck.module.css";
 
@@ -51,7 +50,6 @@ function EditDeck({ deck, pageName }) {
 
   return (
     <div className={editdeck["edit-deck-container"]}>
-      <Breadcrumb deck={deck} pageName={pageName} />
       <DeckForm
         handleSubmit={handleSubmitEdit}
         handleChange={handlePropChange}
