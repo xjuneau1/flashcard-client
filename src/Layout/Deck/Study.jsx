@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import study from "./study.module.css";
-import Breadcrumb from "../Breadcrumb";
 
-function Study({ deck, pageName }) {
+function Study({ deck}) {
   const [card, setCard] = useState(0);
   const [side, setSide] = useState(true);
   const navigate = useNavigate();
@@ -29,7 +28,7 @@ function Study({ deck, pageName }) {
             <h2>Not Enough Cards</h2>
             <p>
               You need at least 2 cards to study. There is {deck.cards.length}{" "}
-              card in this deck.
+              card(s) in this deck.
             </p>
             <Link className={study["study-add-link"]} to={`/decks/${deck.deck_id}/cards/new`}>Add Cards</Link>
           </div>
