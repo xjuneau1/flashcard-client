@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import ErrorAlert from "../Error/ErrorAlert";
 import study from "./study.module.css";
 
 function Study({ deck}) {
@@ -24,6 +25,7 @@ function Study({ deck}) {
     if (deck.cards.length < 2) {
       return (
         <div className={study["study-container"]}>
+          <ErrorAlert error={error} />
           <div className={study["study-no-cards"]}>
             <h2>Not Enough Cards</h2>
             <p>

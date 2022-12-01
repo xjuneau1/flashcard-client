@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from "react-router-dom"
 import { createCard } from "../../utils/api"
 import CardForm from '../forms/CardForm';
+import ErrorAlert from '../Error/ErrorAlert';
 import addcard from "./addcard.module.css"
 function AddCard({deck, pageName}) {
     const { deck_id } = useParams()
@@ -34,6 +35,7 @@ function AddCard({deck, pageName}) {
     }
     return ( 
         <div className={addcard["add-card-container"]}>
+            <ErrorAlert error={error} />
             <h3>{deck.name}: {pageName}</h3>
             <CardForm formData={formData} handleSubmit={handleAddCard} handleChange={handlePropChange} deckId={deck_id} />
         </div> 

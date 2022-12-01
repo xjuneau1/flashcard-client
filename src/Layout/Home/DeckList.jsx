@@ -6,9 +6,14 @@ function DeckList({ decks }) {
   const handleDeleteDeck = (event) => {
     const abortController = new AbortController();
     if (
-      window.confirm("Delete this deck?\n\n You will not be able to recover it.")
+      window.confirm(
+        "Delete this deck?\n\n You will not be able to recover it."
+      )
     ) {
-      deleteDeck(event.target.parentNode.parentNode.parentNode.id, abortController.signal);
+      deleteDeck(
+        event.target.parentNode.parentNode.parentNode.id,
+        abortController.signal
+      );
       return window.location.reload(true);
     }
   };
@@ -28,7 +33,6 @@ function DeckList({ decks }) {
                   <h3>{deck.name}</h3>
                   <h4>Description:</h4>
                   <div className={decklist["deck-description"]}>
-                    
                     <p>{deck.description}</p>
                   </div>
                   <div className={decklist["deck-buttons"]}>
@@ -53,7 +57,9 @@ function DeckList({ decks }) {
           })
           .sort((a, b) => (a < b ? 1 : -1))
       ) : (
-        <div>No Decks to show.</div>
+        <div className={decklist["no-decks-container"]}>
+          No Decks to show.<br></br>If you believe this is wrong, give it 10 seconds and then reload the page.
+        </div>
       )}
     </div>
   );

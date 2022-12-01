@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { readCard, updateCard } from "../../utils/api";
 import CardForm from "../forms/CardForm";
+import ErrorAlert from "../Error/ErrorAlert";
 import editcard from "./editcard.module.css";
 function EditCard({ deck, pageName }) {
   const { card_id } = useParams();
@@ -48,6 +49,7 @@ function EditCard({ deck, pageName }) {
 
   return (
     <div className={editcard["edit-card-container"]}>
+      <ErrorAlert error={error} />
       <h3>{deck.name}: {pageName}</h3>
       <CardForm
         formData={formData}

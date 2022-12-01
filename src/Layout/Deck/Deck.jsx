@@ -29,11 +29,11 @@ function Deck({deck, setDeck, error, setError}) {
     return ( 
     <div className={decks["deck-container"]}>
         <Routes>
-            <Route path="/" element={<DeckView deck={deck} navigate={navigate} />} />
-            <Route path="/study" element={<Study deck={deck} pageName={"Study"} />} />
-            <Route path="/edit" element={<EditDeck deck={deck} pageName={"Edit Deck"} />} />
-            <Route path="/cards/new" element={<AddCard deck={deck} pageName={"Add Card"} />} />
-            <Route path="/cards/:card_id/edit" element={<EditCard deck={deck} pageName={"Edit Card"} />} />      
+            <Route path="/" element={<DeckView deck={deck} error={error} navigate={navigate} />} />
+            <Route path="/study" element={<Study deck={deck} error={error} pageName={"Study"} />} />
+            <Route path="/edit" element={<EditDeck deck={deck} error={error} pageName={"Edit Deck"} />} />
+            <Route path="/cards/new" element={<AddCard deck={deck} error={error} pageName={"Add Card"} />} />
+            <Route path="/cards/:card_id/edit" element={<EditCard deck={deck} error={error} pageName={"Edit Card"} />} />      
         </Routes>
     </div> 
     );

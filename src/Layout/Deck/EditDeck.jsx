@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { readDeck, updateDeck} from "../../utils/api";
 import DeckForm from "../forms/DeckForm";
+import ErrorAlert from "../Error/ErrorAlert";
 import editdeck from "./editdeck.module.css";
 
 function EditDeck({ deck, pageName }) {
@@ -50,6 +51,7 @@ function EditDeck({ deck, pageName }) {
 
   return (
     <div className={editdeck["edit-deck-container"]}>
+      <ErrorAlert error={error} />
       <DeckForm
         handleSubmit={handleSubmitEdit}
         handleChange={handlePropChange}

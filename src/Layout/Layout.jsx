@@ -14,8 +14,8 @@ function Layout() {
     <div className={layout["layout-container"]}>
       <Breadcrumb deck={deck} pageName={pageName} setPageName={setPageName} />
       <Routes>
-        <Route path="/" element={<Home decks={decks} setDecks={setDecks} />} />
-        <Route path="/decks/new" element={<CreateDeck decks={decks} />} />
+        <Route path="/" element={<Home decks={decks} error={error} setError={setError} setDecks={setDecks} />} />
+        <Route path="/decks/new" element={<CreateDeck error={error} setError={setError} decks={decks} />} />
         <Route
           path="/decks/:deck_id/*"
           element={

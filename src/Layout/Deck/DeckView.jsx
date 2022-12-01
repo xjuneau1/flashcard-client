@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { deleteDeck, deleteCard } from "../../utils/api";
+import ErrorAlert from "../Error/ErrorAlert";
 import deckview from "./deckview.module.css";
 function DeckView({ deck, navigate }) {
   const handleDeleteDeck = async () => {
@@ -17,6 +18,7 @@ function DeckView({ deck, navigate }) {
 
   return (
     <>
+    <ErrorAlert error={error} />
       {Object.keys(deck).length ? (
         <div className={deckview["view-deck-container"]}>
           <div className={deckview["deck-info"]}>

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import DeckForm from "../forms/DeckForm";
 import createdeck from "./createdeck.module.css";
 import { createDeck } from "../../utils/api";
+import ErrorAlert from "../Error/ErrorAlert";
 
 function CreateDeck() {
   const initFormData = {
@@ -39,6 +40,7 @@ function CreateDeck() {
 
   return (
     <div className={createdeck["create-container"]}>
+      <ErrorAlert error={error} />
       <DeckForm
         handleSubmit={handleCreateDeck}
         handleChange={handlePropChange}
