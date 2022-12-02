@@ -5,14 +5,13 @@ import createdeck from "./createdeck.module.css";
 import { createDeck } from "../../utils/api";
 import ErrorAlert from "../Error/ErrorAlert";
 
-function CreateDeck() {
+function CreateDeck({error}) {
   const initFormData = {
     name: "",
     description: "",
   };
 
   const [formData, setFormData] = useState(initFormData);
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleCreateDeck = async (event) => {

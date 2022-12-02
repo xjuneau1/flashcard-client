@@ -5,13 +5,13 @@ import DeckForm from "../forms/DeckForm";
 import ErrorAlert from "../Error/ErrorAlert";
 import editdeck from "./editdeck.module.css";
 
-function EditDeck({ deck, pageName }) {
+function EditDeck({ deck, pageName, error }) {
   const initFormData = {
     name: "",
     description: "",
   };
   const [formData, setFormData] = useState(initFormData);
-  const [error, setError] = useState(null);
+  
   const { deck_id } = useParams();
   const navigate = useNavigate();
 

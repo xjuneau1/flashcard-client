@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ErrorAlert from "../Error/ErrorAlert";
 import study from "./study.module.css";
 
-function Study({ deck}) {
+function Study({ deck, error }) {
   const [card, setCard] = useState(0);
   const [side, setSide] = useState(true);
   const navigate = useNavigate();

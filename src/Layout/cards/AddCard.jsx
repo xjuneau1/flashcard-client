@@ -4,7 +4,7 @@ import { createCard } from "../../utils/api"
 import CardForm from '../forms/CardForm';
 import ErrorAlert from '../Error/ErrorAlert';
 import addcard from "./addcard.module.css"
-function AddCard({deck, pageName}) {
+function AddCard({deck, pageName, error}) {
     const { deck_id } = useParams()
     const navigate = useNavigate()
     const initFormData = {
@@ -12,7 +12,6 @@ function AddCard({deck, pageName}) {
         back:""
     }
     const [formData, setFormData] = useState(initFormData)
-    const [error, setError] = useState(null)
 
     const handleAddCard = async (event) => {
         event.preventDefault()

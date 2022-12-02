@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { deleteDeck, deleteCard } from "../../utils/api";
 import ErrorAlert from "../Error/ErrorAlert";
 import deckview from "./deckview.module.css";
-function DeckView({ deck, navigate }) {
+function DeckView({ deck, navigate, error}) {
   const handleDeleteDeck = async () => {
     const abortController = new AbortController();
     if (

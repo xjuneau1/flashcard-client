@@ -4,7 +4,7 @@ import { readCard, updateCard } from "../../utils/api";
 import CardForm from "../forms/CardForm";
 import ErrorAlert from "../Error/ErrorAlert";
 import editcard from "./editcard.module.css";
-function EditCard({ deck, pageName }) {
+function EditCard({ deck, pageName, error }) {
   const { card_id } = useParams();
   const initFormData = {
     front: "",
@@ -12,7 +12,6 @@ function EditCard({ deck, pageName }) {
   };
 
   const [formData, setFormData] = useState(initFormData);
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
